@@ -9,15 +9,15 @@ const Projects: React.FC = () => {
       description: 'A full-stack e-commerce platform for students to buy and sell textbooks and supplies. Built with React, Spring Boot, and MySQL.',
       tags: ['React', 'Spring Boot', 'MySQL', 'REST API'],
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/hloni2004/StudentMarket2',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
-      title: 'Portfolio Website',
-      description: 'A futuristic, interactive portfolio showcasing my projects and skills with advanced animations and modern design principles.',
-      tags: ['React', 'Tailwind CSS', 'Framer Motion'],
+      title: 'Timetable Management System',
+      description: 'A Java-based desktop application for students to design and manage their academic timetables. Built using Java Swing and Derby database.',
+      tags: ['Java', 'Swing', 'Derby DB', 'Desktop App'],
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/hloni2004/StudentMarket2',
       gradient: 'from-purple-400 to-pink-500',
     },
     {
@@ -134,6 +134,8 @@ const Projects: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 bg-gray-700 text-white font-mono font-semibold rounded-lg border border-gray-600 transition-all duration-300 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-400/25"
                   >
                     <FaGithub size={14} />

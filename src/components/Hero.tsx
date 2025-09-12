@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-cyan-900/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-800/30 via-slate-900/50 to-gray-800/30" />
       
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 2, duration: 1 }}
           className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Full-Stack Developer & Data Analytics Trainee | Passionate about futuristic, interactive tech
+          Full-Stack Developer & Data Analytics Trainee | Ready for collaboration
         </motion.p>
         
         <motion.div
@@ -75,7 +75,11 @@ const Hero: React.FC = () => {
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 255, 255, 0.5)' }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg border border-cyan-400/30 backdrop-blur-sm transition-all duration-300"
+            onClick={() => {
+              const skillsSection = document.querySelector('#skills');
+              skillsSection?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg border border-cyan-400/30 backdrop-blur-sm transition-all duration-300 cursor-pointer"
           >
             Explore My Work
           </motion.button>
