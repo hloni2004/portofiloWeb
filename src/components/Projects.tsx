@@ -1,40 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 
 const Projects: React.FC = () => {
-  const projects = [
+  const projects: Array<{
+    title: string;
+    description: string;
+    tags: string[];
+    githubUrl: string;
+    gradient: string;
+  }> = [
     {
-      title: 'Student Market Application',
-      description: 'A full-stack e-commerce platform for students to buy and sell textbooks and supplies. Built with React, Spring Boot, and MySQL.',
-      tags: ['React', 'Spring Boot', 'MySQL', 'REST API'],
-      liveUrl: '#',
+      title: 'Student Market Application - Backend',
+      description: 'A Spring Boot backend for a full-stack e-commerce platform where students can buy and sell textbooks and supplies. Features REST API endpoints, MySQL database integration, and secure user authentication.',
+      tags: ['Spring Boot', 'Java', 'MySQL', 'REST API', 'JPA', 'Maven'],
       githubUrl: 'https://github.com/hloni2004/StudentMarket2',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
-      title: 'Timetable Management System',
-      description: 'A Java-based desktop application for students to design and manage their academic timetables. Built using Java Swing and Derby database.',
-      tags: ['Java', 'Swing', 'Derby DB', 'Desktop App'],
-      liveUrl: '#',
-      githubUrl: 'https://github.com/hloni2004/StudentMarket2',
+      title: 'Student Market Application - Frontend',
+      description: 'React frontend for the Student Market platform, providing an intuitive user interface for browsing, buying, and selling academic resources. Built with modern React patterns and responsive design.',
+      tags: ['React', 'JavaScript', 'CSS', 'HTML', 'Responsive Design'],
+      githubUrl: 'https://github.com/hloni2004/StudentMarket-Group-React',
       gradient: 'from-purple-400 to-pink-500',
     },
     {
-      title: 'Data Analytics Dashboard',
-      description: 'Interactive dashboard for visualizing complex datasets with Python, featuring real-time updates and customizable charts.',
-      tags: ['Python', 'Pandas', 'Plotly', 'Flask'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: 'Timetable Management System',
+      description: 'A Java-based desktop application for students to design and manage their academic timetables. Built using Java Swing for the GUI and Derby database for data persistence.',
+      tags: ['Java', 'Swing', 'Derby DB', 'Desktop App', 'GUI'],
+      githubUrl: 'https://github.com/hloni2004/timetable-project',
       gradient: 'from-green-400 to-emerald-500',
-    },
-    {
-      title: 'Blockchain Voting System',
-      description: 'Secure and transparent voting application using blockchain technology to ensure election integrity and voter privacy.',
-      tags: ['Solidity', 'Web3.js', 'Ethereum', 'React'],
-      liveUrl: '#',
-      githubUrl: '#',
-      gradient: 'from-yellow-400 to-orange-500',
     },
   ];
 
@@ -82,7 +77,7 @@ const Projects: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, index) => (
             <motion.div
@@ -118,28 +113,18 @@ const Projects: React.FC = () => {
                   ))}
                 </div>
                 
-                {/* Action buttons */}
-                <div className="flex gap-4">
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    href={project.liveUrl}
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-mono font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25"
-                  >
-                    <FaExternalLinkAlt size={14} />
-                    Live Demo
-                  </motion.a>
-                  
+                {/* Action button */}
+                <div className="flex justify-center">
                   <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-700 text-white font-mono font-semibold rounded-lg border border-gray-600 transition-all duration-300 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-400/25"
+                    className="flex items-center gap-2 px-6 py-2 bg-gray-700 text-white font-mono font-semibold rounded-lg border border-gray-600 transition-all duration-300 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-400/25"
                   >
                     <FaGithub size={14} />
-                    Code
+                    View Code
                   </motion.a>
                 </div>
                 
