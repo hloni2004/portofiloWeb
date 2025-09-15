@@ -5,38 +5,80 @@ import { FaGraduationCap, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 const Education: React.FC = () => {
   const educationData = [
     {
+      year: "2025",
+      title: "Diploma in Application Development - Third Year",
+      institution: "Cape Peninsula University of Technology (CPUT)",
+      location: "Cape Town, South Africa",
+      status: "Current",
+      modules: [
+        {
+          name: "Application Development 3",
+          description: "Currently learning Spring Boot and RESTful API development, creating a fully functional website using Spring framework for backend and React for frontend."
+        },
+        {
+          name: "Application Development Theory",
+          description: "Applying Agile principles to projects, focusing on designing and developing high-quality products efficiently."
+        },
+        {
+          name: "Project 3",
+          description: "Conceptualizing ideas and bringing them to life by developing solutions that address real societal needs."
+        },
+        {
+          name: "ICT Elective 3",
+          description: "Learned the basics of IoT and developed a smart room project to apply theoretical knowledge in practical settings."
+        },
+        {
+          name: "Information Systems",
+          description: "Applied database design principles by creating an advanced database system for a local shop to implement real-world solutions."
+        },
+        {
+          name: "Professional Practice",
+          description: "Learning professional ethics, conduct, and workplace behavior to prepare for industry practice."
+        },
+        {
+          name: "Project Management",
+          description: "Gaining advanced skills in planning, organizing, and managing projects effectively."
+        }
+      ],
+      gradient: "from-green-400 to-emerald-500"
+    },
+    {
       year: "2023",
       title: "Diploma in Application Development - Second Year",
       institution: "Cape Peninsula University of Technology (CPUT)",
       location: "Cape Town, South Africa",
       modules: [
         {
-          name: "Application Development Fundamentals 2",
-          description: "Advanced study of data structures and deepening programming concepts."
+          name: "Application Development Fundamentals",
+          description: "Introduction to principles of application development while gaining skills in efficiently organizing data using arrays, lists, stacks, and other structures."
         },
         {
           name: "Application Development ADP2", 
-          description: "Advanced topics in Java, object-oriented programming, inheritance, and database integration. Completed an elective using Python."
+          description: "Explored advanced Java programming, object-oriented design, inheritance, and database integration, and completed an elective learning the fundamentals of Python."
         },
         {
-          name: "Application Development",
-          description: "Deepened understanding of application development principles and software lifecycle."
+          name: "Application Development Theory",
+          description: "Strengthened understanding of software development principles, design patterns, and the software development lifecycle."
         },
         {
           name: "Information Systems",
-          description: "Learned database design, SQL queries, and essential knowledge for managing information systems."
+          description: "Developed skills in database design and SQL, and learned to manage and implement information systems effectively."
         },
         {
           name: "Information Management",
-          description: "Learned about project management, planning, and organizing information for professional projects."
+          description: "Studied project management methods, planning techniques, and strategies for organizing professional information."
         },
         {
-          name: "Project Two",
-          description: "Created and managed a project professionally, focusing on teamwork, planning, and execution."
+          name: "Project2",
+          description: "Led and contributed to a professional project, emphasizing teamwork, planning, and successful execution."
         },
         {
           name: "Professional Presentation",
-          description: "Learned professional ethics, presentation skills, and how to present projects effectively."
+          description: "Developed professional ethics, improved presentation skills, and learned to communicate and present technical projects effectively."
+        },
+        {
+          name: "Communication Network",
+          description: "Learned about networking fundamentals, protocols, communication processes, and their theoretical applications."
         }
       ],
       gradient: "from-purple-400 to-pink-500"
@@ -49,27 +91,31 @@ const Education: React.FC = () => {
       modules: [
         {
           name: "Programming",
-          description: "Learned Java, JavaScript, C, and HTML, gaining a foundation in programming languages."
+          description: "Learned basic JavaScript, CSS, and HTML, building a solid foundation in multiple programming languages."
+        },
+        {
+          name: "Application Development",
+          description: "Introduced to the basics of Java programming, learning the theory behind the language and fundamental concepts."
         },
         {
           name: "Application Development Fundamentals",
-          description: "Introduced to Java programming and core principles of application development."
-        },
-        {
-          name: "Data Structures",
-          description: "Learned how to organize data efficiently using arrays, lists, stacks, and other structures."
+          description: "Introduction to principles of application development while gaining skills in efficiently organizing data using arrays, lists, stacks, and other structures."
         },
         {
           name: "Multimedia",
-          description: "Introduced to color theory, UX design, and the importance of visual design in applications."
+          description: "Learned color theory, UX design, and the importance of visual design in applications."
         },
         {
           name: "Business Skills",
-          description: "Learned the business aspects of technology, including understanding how tech projects align with organizational goals."
+          description: "Studied the business aspects of technology and how projects align with organizational goals."
         },
         {
           name: "Information Systems Fundamentals",
-          description: "Learned basic hardware, software, and IT concepts essential for a tech career."
+          description: "Developed an understanding of essential hardware, software, and IT concepts for a technology career."
+        },
+        {
+          name: "Communication Network",
+          description: "Learned the basics of networking, including protocols and network fundamentals."
         }
       ],
       gradient: "from-cyan-400 to-blue-500"
@@ -94,7 +140,7 @@ const Education: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -106,7 +152,7 @@ const Education: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -158,11 +204,20 @@ const Education: React.FC = () => {
               <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-600/30 rounded-xl p-8 transition-all duration-300 hover:border-cyan-400/50">
                 {/* Year badge */}
                 <motion.div
-                  className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${education.gradient} rounded-full text-white font-mono font-bold text-sm mb-6`}
+                  className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${education.gradient} rounded-full text-white font-mono font-bold text-sm mb-6 relative`}
                   whileHover={{ scale: 1.05 }}
                 >
                   <FaCalendarAlt size={14} />
                   {education.year}
+                  {education.status && (
+                    <motion.span
+                      animate={{ opacity: [0.5, 1, 0.5] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="text-xs bg-white/20 px-2 py-1 rounded-full ml-2"
+                    >
+                      {education.status}
+                    </motion.span>
+                  )}
                 </motion.div>
 
                 {/* Institution info */}
@@ -186,30 +241,38 @@ const Education: React.FC = () => {
                   
                   <motion.div
                     variants={containerVariants}
-                    className="grid gap-4 md:grid-cols-2"
+                    className="grid gap-3 md:grid-cols-3 lg:grid-cols-4"
                   >
                     {education.modules.map((module, moduleIndex) => (
                       <motion.div
                         key={module.name}
                         variants={moduleVariants}
                         whileHover={{ 
-                          scale: 1.05,
-                          boxShadow: '0 10px 25px rgba(0, 255, 255, 0.1)'
+                          scale: 1.15,
+                          zIndex: 10,
+                          boxShadow: '0 15px 35px rgba(0, 255, 255, 0.2)'
                         }}
-                        className="bg-gray-700/30 backdrop-blur-sm border border-gray-600/20 rounded-lg p-4 transition-all duration-300 hover:border-cyan-400/30 group/module"
+                        className="bg-gray-700/20 backdrop-blur-sm border border-gray-600/20 rounded-lg p-3 transition-all duration-300 hover:border-cyan-400/50 group/module relative cursor-pointer"
                       >
-                        <h5 className="font-mono font-semibold text-cyan-400 mb-2 group-hover/module:text-purple-400 transition-colors">
+                        <h5 className="font-mono font-semibold text-cyan-400 mb-1 text-sm group-hover/module:text-purple-400 transition-colors line-clamp-2">
                           {module.name}
                         </h5>
-                        <p className="text-gray-300 text-sm leading-relaxed">
+                        <p className="text-gray-400 text-xs leading-relaxed line-clamp-3 group-hover/module:text-gray-200 group-hover/module:line-clamp-none transition-all duration-300">
                           {module.description}
                         </p>
                         
                         {/* Module hover glow */}
                         <motion.div
-                          className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 to-purple-500/5 opacity-0 group-hover/module:opacity-100 rounded-lg transition-opacity duration-300 blur-sm"
+                          className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-purple-500/10 opacity-0 group-hover/module:opacity-100 rounded-lg transition-opacity duration-300 blur-sm pointer-events-none"
                           initial={{ scale: 0.8 }}
-                          whileHover={{ scale: 1.1 }}
+                          whileHover={{ scale: 1.2 }}
+                        />
+
+                        {/* Expanded background on hover */}
+                        <motion.div
+                          className="absolute inset-0 bg-gray-800/90 backdrop-blur-md border border-cyan-400/30 rounded-lg opacity-0 group-hover/module:opacity-100 transition-all duration-300 pointer-events-none"
+                          initial={{ scale: 0.95 }}
+                          whileHover={{ scale: 1 }}
                         />
                       </motion.div>
                     ))}
