@@ -241,38 +241,31 @@ const Education: React.FC = () => {
                   
                   <motion.div
                     variants={containerVariants}
-                    className="grid gap-3 md:grid-cols-3 lg:grid-cols-4"
+                    className="grid gap-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
                   >
                     {education.modules.map((module, moduleIndex) => (
                       <motion.div
                         key={module.name}
                         variants={moduleVariants}
                         whileHover={{ 
-                          scale: 1.15,
-                          zIndex: 10,
-                          boxShadow: '0 15px 35px rgba(0, 255, 255, 0.2)'
+                          scale: 1.1,
+                          zIndex: 50
                         }}
-                        className="bg-gray-700/20 backdrop-blur-sm border border-gray-600/20 rounded-lg p-3 transition-all duration-300 hover:border-cyan-400/50 group/module relative cursor-pointer"
+                        className="bg-gray-700/20 backdrop-blur-sm border border-gray-600/20 rounded-lg p-3 transition-all duration-300 hover:border-cyan-400/50 group/module relative cursor-pointer isolated"
+                        style={{
+                          transformOrigin: 'center'
+                        }}
                       >
-                        <h5 className="font-mono font-semibold text-cyan-400 mb-1 text-sm group-hover/module:text-purple-400 transition-colors line-clamp-2">
+                        <h5 className="font-mono font-semibold text-cyan-400 mb-1 text-sm group-hover/module:text-purple-400 transition-colors">
                           {module.name}
                         </h5>
-                        <p className="text-gray-400 text-xs leading-relaxed line-clamp-3 group-hover/module:text-gray-200 group-hover/module:line-clamp-none transition-all duration-300">
+                        <p className="text-gray-400 text-xs leading-relaxed group-hover/module:text-gray-200 transition-colors duration-300">
                           {module.description}
                         </p>
                         
                         {/* Module hover glow */}
                         <motion.div
                           className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-purple-500/10 opacity-0 group-hover/module:opacity-100 rounded-lg transition-opacity duration-300 blur-sm pointer-events-none"
-                          initial={{ scale: 0.8 }}
-                          whileHover={{ scale: 1.2 }}
-                        />
-
-                        {/* Expanded background on hover */}
-                        <motion.div
-                          className="absolute inset-0 bg-gray-800/90 backdrop-blur-md border border-cyan-400/30 rounded-lg opacity-0 group-hover/module:opacity-100 transition-all duration-300 pointer-events-none"
-                          initial={{ scale: 0.95 }}
-                          whileHover={{ scale: 1 }}
                         />
                       </motion.div>
                     ))}
