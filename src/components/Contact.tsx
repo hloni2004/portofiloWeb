@@ -7,21 +7,22 @@ const Contact: React.FC = () => {
     {
       icon: FaGithub,
       label: 'GitHub',
-      url: 'https://github.com',
+      url: 'https://github.com/hloni2004',
       color: 'hover:text-white hover:shadow-white/25',
       hoverColor: 'group-hover:from-gray-400 group-hover:to-gray-600',
     },
     {
       icon: FaLinkedin,
       label: 'LinkedIn',
-      url: 'https://linkedin.com',
+      url: 'https://www.linkedin.com/in/lehlohonolo-mokoena-fullstack/',
       color: 'hover:text-blue-400 hover:shadow-blue-400/25',
       hoverColor: 'group-hover:from-blue-400 group-hover:to-blue-600',
     },
     {
       icon: FaEnvelope,
       label: 'Email',
-      url: 'mailto:lehlohonolo@example.com',
+      // Opens Gmail compose window with your email
+      url: 'https://mail.google.com/mail/?view=cm&fs=1&to=hloniyacho@gmail.com',
       color: 'hover:text-cyan-400 hover:shadow-cyan-400/25',
       hoverColor: 'group-hover:from-cyan-400 group-hover:to-cyan-600',
     },
@@ -31,9 +32,7 @@ const Contact: React.FC = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -43,16 +42,14 @@ const Contact: React.FC = () => {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   return (
     <section className="py-20 px-4 relative">
       <div className="max-w-4xl mx-auto text-center">
+        {/* Heading & Let's Connect */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,16 +57,17 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">
-            Let's Connect
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full mb-6" />
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4">
             Ready to collaborate on exciting projects or discuss opportunities? 
             Let's build something amazing together.
+          </h3>
+          <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full mb-6" />
+          <p className="text-2xl md:text-3xl font-extrabold text-gray-100 max-w-2xl mx-auto">
+            Let's Connect
           </p>
         </motion.div>
 
+        {/* Social Icons */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -77,7 +75,7 @@ const Contact: React.FC = () => {
           viewport={{ once: true }}
           className="flex justify-center items-center gap-8 mb-12"
         >
-          {socialLinks.map((link, index) => (
+          {socialLinks.map((link) => (
             <motion.a
               key={link.label}
               variants={itemVariants}
@@ -109,7 +107,7 @@ const Contact: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Location badge */}
+        {/* Location Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -122,7 +120,7 @@ const Contact: React.FC = () => {
         </motion.div>
       </div>
       
-      {/* Bottom gradient line */}
+      {/* Bottom Gradient Line */}
       <motion.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}

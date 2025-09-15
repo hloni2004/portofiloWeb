@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   const [text, setText] = useState('');
-  const fullText = "Hi 👋, I'm Lehlohonolo Mokoena";
-  
+  const fullText = "Hi, I'm Lehlohonolo Mokoena";
+
   useEffect(() => {
     let currentIndex = 0;
     const timer = setInterval(() => {
@@ -15,48 +15,64 @@ const Hero: React.FC = () => {
         clearInterval(timer);
       }
     }, 100);
-    
+
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-900">
+      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800/30 via-slate-900/50 to-gray-800/30" />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         className="text-center z-10 px-4"
       >
-        <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-mono font-bold mb-6"
-          style={{
-            background: 'linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ffff)',
-            backgroundSize: '300% 300%',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}
-          animate={{
-            backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          {text}
-          <motion.span
-            animate={{ opacity: [1, 0, 1] }}
-            transition={{ duration: 0.8, repeat: Infinity }}
-            className="text-cyan-400"
+        {/* Flex container for profile image + animated name */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+          {/* Profile Picture */}
+          <motion.img
+            src="/icons/hloni.jpeg"
+            alt="Lehlohonolo Mokoena"
+            className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-cyan-400/30"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5 }}
+          />
+
+          {/* Animated Name */}
+          <motion.h1
+            className="text-4xl md:text-6xl lg:text-7xl font-mono font-bold"
+            style={{
+              background: 'linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ffff)',
+              backgroundSize: '300% 300%',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+            animate={{
+              backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
           >
-            |
-          </motion.span>
-        </motion.h1>
-        
+            {text}
+            <motion.span
+              animate={{ opacity: [1, 0, 1] }}
+              transition={{ duration: 0.8, repeat: Infinity }}
+              className="text-cyan-400"
+            >
+              |
+            </motion.span>
+          </motion.h1>
+        </div>
+
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -65,7 +81,8 @@ const Hero: React.FC = () => {
         >
           Full-Stack Developer & Data Analytics Trainee | Ready for collaboration
         </motion.p>
-        
+
+        {/* Explore Button */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -85,30 +102,16 @@ const Hero: React.FC = () => {
           </motion.button>
         </motion.div>
       </motion.div>
-      
+
       {/* Floating geometric shapes */}
       <motion.div
-        animate={{
-          rotate: 360,
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-        }}
+        animate={{ rotate: 360, scale: [1, 1.2, 1] }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         className="absolute top-20 left-10 w-20 h-20 border border-cyan-400/30 rotate-45"
       />
       <motion.div
-        animate={{
-          rotate: -360,
-          scale: [1, 0.8, 1],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "linear",
-        }}
+        animate={{ rotate: -360, scale: [1, 0.8, 1] }}
+        transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
         className="absolute bottom-20 right-10 w-16 h-16 border border-purple-400/30 rounded-full"
       />
     </section>
