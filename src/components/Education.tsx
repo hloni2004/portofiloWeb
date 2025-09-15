@@ -11,34 +11,13 @@ const Education: React.FC = () => {
       location: "Cape Town, South Africa",
       status: "Current",
       modules: [
-        {
-          name: "Application Development 3",
-          description: "Currently learning Spring Boot and RESTful API development, creating a fully functional website using Spring framework for backend and React for frontend."
-        },
-        {
-          name: "Application Development Theory",
-          description: "Applying Agile principles to projects, focusing on designing and developing high-quality products efficiently."
-        },
-        {
-          name: "Project 3",
-          description: "Conceptualizing ideas and bringing them to life by developing solutions that address real societal needs."
-        },
-        {
-          name: "ICT Elective 3",
-          description: "Learned the basics of IoT and developed a smart room project to apply theoretical knowledge in practical settings."
-        },
-        {
-          name: "Information Systems",
-          description: "Applied database design principles by creating an advanced database system for a local shop to implement real-world solutions."
-        },
-        {
-          name: "Professional Practice",
-          description: "Learning professional ethics, conduct, and workplace behavior to prepare for industry practice."
-        },
-        {
-          name: "Project Management",
-          description: "Gaining advanced skills in planning, organizing, and managing projects effectively."
-        }
+        { name: "Application Development 3", description: "Spring Boot & REST API, backend with React frontend." },
+        { name: "Application Development Theory", description: "Applying Agile principles to projects efficiently." },
+        { name: "Project 3", description: "Developing solutions that address real societal needs." },
+        { name: "ICT Elective 3", description: "Basics of IoT applied in a smart room project." },
+        { name: "Information Systems", description: "Database design for real-world solutions." },
+        { name: "Professional Practice", description: "Professional ethics and workplace behavior." },
+        { name: "Project Management", description: "Advanced planning, organizing, and managing projects." }
       ],
       gradient: "from-green-400 to-emerald-500"
     },
@@ -48,38 +27,14 @@ const Education: React.FC = () => {
       institution: "Cape Peninsula University of Technology (CPUT)",
       location: "Cape Town, South Africa",
       modules: [
-        {
-          name: "Application Development Fundamentals",
-          description: "Introduction to principles of application development while gaining skills in efficiently organizing data using arrays, lists, stacks, and other structures."
-        },
-        {
-          name: "Application Development ADP2", 
-          description: "Explored advanced Java programming, object-oriented design, inheritance, and database integration, and completed an elective learning the fundamentals of Python."
-        },
-        {
-          name: "Application Development Theory",
-          description: "Strengthened understanding of software development principles, design patterns, and the software development lifecycle."
-        },
-        {
-          name: "Information Systems",
-          description: "Developed skills in database design and SQL, and learned to manage and implement information systems effectively."
-        },
-        {
-          name: "Information Management",
-          description: "Studied project management methods, planning techniques, and strategies for organizing professional information."
-        },
-        {
-          name: "Project2",
-          description: "Led and contributed to a professional project, emphasizing teamwork, planning, and successful execution."
-        },
-        {
-          name: "Professional Presentation",
-          description: "Developed professional ethics, improved presentation skills, and learned to communicate and present technical projects effectively."
-        },
-        {
-          name: "Communication Network",
-          description: "Learned about networking fundamentals, protocols, communication processes, and their theoretical applications."
-        }
+        { name: "Application Development Fundamentals", description: "Basics of organizing data with arrays, lists, stacks." },
+        { name: "Application Development ADP2", description: "Advanced Java, OOP, inheritance, and Python basics." },
+        { name: "Application Development Theory", description: "Software principles, design patterns, and SDLC." },
+        { name: "Information Systems", description: "Database design and SQL for real-world systems." },
+        { name: "Information Management", description: "Planning and organizing professional info." },
+        { name: "Project2", description: "Team projects emphasizing planning and execution." },
+        { name: "Professional Presentation", description: "Ethics, presentation, and communication skills." },
+        { name: "Communication Network", description: "Networking fundamentals and protocols." }
       ],
       gradient: "from-purple-400 to-pink-500"
     },
@@ -89,34 +44,13 @@ const Education: React.FC = () => {
       institution: "Cape Peninsula University of Technology (CPUT)",
       location: "Cape Town, South Africa",
       modules: [
-        {
-          name: "Programming",
-          description: "Learned basic JavaScript, CSS, and HTML, building a solid foundation in multiple programming languages."
-        },
-        {
-          name: "Application Development",
-          description: "Introduced to the basics of Java programming, learning the theory behind the language and fundamental concepts."
-        },
-        {
-          name: "Application Development Fundamentals",
-          description: "Introduction to principles of application development while gaining skills in efficiently organizing data using arrays, lists, stacks, and other structures."
-        },
-        {
-          name: "Multimedia",
-          description: "Learned color theory, UX design, and the importance of visual design in applications."
-        },
-        {
-          name: "Business Skills",
-          description: "Studied the business aspects of technology and how projects align with organizational goals."
-        },
-        {
-          name: "Information Systems Fundamentals",
-          description: "Developed an understanding of essential hardware, software, and IT concepts for a technology career."
-        },
-        {
-          name: "Communication Network",
-          description: "Learned the basics of networking, including protocols and network fundamentals."
-        }
+        { name: "Programming", description: "Basic JavaScript, CSS, HTML foundation." },
+        { name: "Application Development", description: "Introduction to Java programming basics." },
+        { name: "Application Development Fundamentals", description: "Data structures like arrays, lists, stacks." },
+        { name: "Multimedia", description: "Color theory, UX, and visual design basics." },
+        { name: "Business Skills", description: "Business aspects of technology projects." },
+        { name: "Information Systems Fundamentals", description: "Essential hardware, software, and IT concepts." },
+        { name: "Communication Network", description: "Networking fundamentals and protocols." }
       ],
       gradient: "from-cyan-400 to-blue-500"
     }
@@ -124,96 +58,75 @@ const Education: React.FC = () => {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, x: -50, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut" as const,
-      },
-    },
+    hidden: { opacity: 0, x: -20, scale: 0.95 },
+    visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.7, ease: "easeOut" as const } },
   };
 
   const moduleVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut" as const,
-      },
-    },
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
   };
 
   return (
-    <section className="py-20 px-4 relative">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-16 px-4 relative">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-12"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <motion.div
               animate={{ rotate: [0, 15, -15, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              <FaGraduationCap className="text-4xl text-cyan-400" />
+              <FaGraduationCap className="text-3xl text-cyan-400" />
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-mono font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-mono font-bold text-white">
               Education
             </h2>
           </div>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full mb-6" />
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full mb-4" />
+          <p className="text-md text-gray-300 max-w-xl mx-auto">
             My academic journey in application development, building the foundation for my tech career
           </p>
         </motion.div>
 
+        {/* Education Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="space-y-8"
+          className="space-y-6"
         >
           {educationData.map((education, index) => (
             <motion.div
               key={education.year}
               variants={cardVariants}
-              whileHover={{
-                scale: 1.02,
-                boxShadow: '0 25px 50px rgba(0, 255, 255, 0.15)',
-              }}
+              whileHover={{ scale: 1.01, boxShadow: '0 15px 30px rgba(0, 255, 255, 0.1)' }}
               className="group relative"
             >
-              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-600/30 rounded-xl p-8 transition-all duration-300 hover:border-cyan-400/50">
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-600/30 rounded-xl p-6 transition-all duration-300 hover:border-cyan-400/50 relative z-10">
                 {/* Year badge */}
                 <motion.div
-                  className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${education.gradient} rounded-full text-white font-mono font-bold text-sm mb-6 relative`}
+                  className={`inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r ${education.gradient} rounded-full text-white font-mono font-bold text-xs mb-4 relative`}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <FaCalendarAlt size={14} />
+                  <FaCalendarAlt size={12} />
                   {education.year}
                   {education.status && (
                     <motion.span
                       animate={{ opacity: [0.5, 1, 0.5] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="text-xs bg-white/20 px-2 py-1 rounded-full ml-2"
+                      className="text-xs bg-white/20 px-1 py-0.5 rounded-full ml-1"
                     >
                       {education.status}
                     </motion.span>
@@ -221,12 +134,12 @@ const Education: React.FC = () => {
                 </motion.div>
 
                 {/* Institution info */}
-                <div className="mb-6">
-                  <h3 className="text-2xl font-mono font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                <div className="mb-4">
+                  <h3 className="text-xl font-mono font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
                     {education.title}
                   </h3>
-                  <h4 className="text-xl text-gray-300 mb-2">{education.institution}</h4>
-                  <div className="flex items-center gap-2 text-gray-400 font-mono text-sm">
+                  <h4 className="text-sm text-gray-300 mb-1">{education.institution}</h4>
+                  <div className="flex items-center gap-1 text-gray-400 font-mono text-xs">
                     <FaMapMarkerAlt className="text-cyan-400" />
                     {education.location}
                   </div>
@@ -234,47 +147,41 @@ const Education: React.FC = () => {
 
                 {/* Modules section */}
                 <div>
-                  <h4 className="text-lg font-mono font-semibold text-white mb-4 flex items-center gap-2">
-                    <div className={`w-3 h-3 bg-gradient-to-r ${education.gradient} rounded-full`} />
+                  <h4 className="text-sm font-mono font-semibold text-white mb-2 flex items-center gap-2">
+                    <div className={`w-2 h-2 bg-gradient-to-r ${education.gradient} rounded-full`} />
                     Modules & Descriptions
                   </h4>
                   
                   <motion.div
                     variants={containerVariants}
-                    className="grid gap-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+                    className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-4xl mx-auto"
                   >
-                    {education.modules.map((module, moduleIndex) => (
+                    {education.modules.map((module) => (
                       <motion.div
                         key={module.name}
                         variants={moduleVariants}
-                        whileHover={{ 
-                          scale: 1.1,
-                          zIndex: 50
-                        }}
-                        className="bg-gray-700/20 backdrop-blur-sm border border-gray-600/20 rounded-lg p-3 transition-all duration-300 hover:border-cyan-400/50 group/module relative cursor-pointer isolated"
-                        style={{
-                          transformOrigin: 'center'
-                        }}
+                        whileHover={{ scale: 1.03, zIndex: 50 }}
+                        className="bg-gray-700/20 backdrop-blur-sm border border-gray-600/20 rounded-md p-2 transition-all duration-300 hover:border-cyan-400/50 group/module relative cursor-pointer"
+                        style={{ transformOrigin: 'center' }}
                       >
-                        <h5 className="font-mono font-semibold text-cyan-400 mb-1 text-sm group-hover/module:text-purple-400 transition-colors">
+                        <h5 className="font-mono font-semibold text-cyan-400 mb-1 text-xs group-hover/module:text-purple-400 transition-colors">
                           {module.name}
                         </h5>
-                        <p className="text-gray-400 text-xs leading-relaxed group-hover/module:text-gray-200 transition-colors duration-300">
+                        <p className="text-gray-400 text-[10px] leading-snug group-hover/module:text-gray-200 transition-colors duration-300">
                           {module.description}
                         </p>
-                        
-                        {/* Module hover glow */}
+
                         <motion.div
-                          className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-purple-500/10 opacity-0 group-hover/module:opacity-100 rounded-lg transition-opacity duration-300 blur-sm pointer-events-none"
+                          className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-purple-500/10 opacity-0 group-hover/module:opacity-100 rounded-md transition-opacity duration-300 blur-sm pointer-events-none"
                         />
                       </motion.div>
                     ))}
                   </motion.div>
                 </div>
 
-                {/* Card glow effect */}
+                {/* Card glow */}
                 <motion.div
-                  className={`absolute inset-0 bg-gradient-to-r ${education.gradient} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300 blur-xl`}
+                  className={`absolute inset-0 bg-gradient-to-r ${education.gradient} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300 blur-xl pointer-events-none`}
                   initial={{ scale: 0.8 }}
                   whileHover={{ scale: 1.1 }}
                 />
@@ -286,22 +193,13 @@ const Education: React.FC = () => {
                   initial={{ scaleY: 0 }}
                   whileInView={{ scaleY: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
-                  className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-4 w-px h-8 bg-gradient-to-b from-cyan-400 to-transparent"
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-3 w-px h-6 bg-gradient-to-b from-cyan-400 to-transparent"
                 />
               )}
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Bottom decorative line */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1, duration: 1 }}
-          className="w-full h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent mt-16"
-        />
       </div>
     </section>
   );

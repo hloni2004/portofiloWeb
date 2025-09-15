@@ -12,23 +12,26 @@ const Projects: React.FC = () => {
   }> = [
     {
       title: 'Student Market Application - Backend',
-      description: 'A Spring Boot backend for a full-stack e-commerce platform where students can buy and sell textbooks and supplies. Features REST API endpoints, MySQL database integration, and secure user authentication.',
+      description:
+        'A Spring Boot backend for a full-stack e-commerce platform where students can buy and sell textbooks and supplies. Features REST API endpoints, MySQL database integration, and secure user authentication.',
       tags: ['Spring Boot', 'Java', 'MySQL', 'REST API', 'JPA', 'Maven'],
       githubUrl: 'https://github.com/hloni2004/StudentMarket2',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
       title: 'Student Market Application - Frontend',
-      description: 'React frontend for the Student Market platform, providing an intuitive user interface for browsing, buying, and selling academic resources. Built with modern React patterns and responsive design.',
+      description:
+        'React frontend for the Student Market platform, providing an intuitive user interface for browsing, buying, and selling academic resources. Built with modern React patterns and responsive design.',
       tags: ['React', 'JavaScript', 'CSS', 'HTML', 'Responsive Design'],
       githubUrl: 'https://github.com/hloni2004/StudentMarket-Group-React',
       gradient: 'from-purple-400 to-pink-500',
     },
     {
       title: 'Timetable Management System',
-      description: 'A Java-based desktop application for students to design and manage their academic timetables. Built using Java Swing for the GUI and Derby database for data persistence.',
-      tags: ['Java', 'Swing', 'Derby DB', 'Desktop App', 'GUI'],
-      githubUrl: 'https://github.com/hloni2004/timetable-project',
+      description:
+        'Updated version of the Java-based desktop application for designing and managing academic timetables. Includes enhanced GUI with Java Swing, new scheduling features, improved database integration using Derby DB, and modular design for scalability.',
+      tags: ['Java', 'Swing', 'Derby DB', 'Desktop App', 'GUI', 'Scheduling', 'Timetable'],
+      githubUrl: 'https://github.com/hloni2004/Timetable-Management-System',
       gradient: 'from-green-400 to-emerald-500',
     },
   ];
@@ -37,9 +40,7 @@ const Projects: React.FC = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.2 },
     },
   };
 
@@ -49,16 +50,14 @@ const Projects: React.FC = () => {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        duration: 0.7,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.7, ease: 'easeOut' },
     },
   };
 
   return (
     <section className="py-20 px-4 relative">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,6 +71,7 @@ const Projects: React.FC = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full" />
         </motion.div>
 
+        {/* Project Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -79,28 +79,27 @@ const Projects: React.FC = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.title}
               variants={cardVariants}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: '0 25px 50px rgba(0, 255, 255, 0.2)',
-              }}
+              whileHover={{ scale: 1.05 }}
               className="group relative"
             >
-              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-600/30 rounded-xl p-6 transition-all duration-300 hover:border-cyan-400/50 h-full">
-                {/* Project header with gradient */}
-                <div className={`h-2 w-full bg-gradient-to-r ${project.gradient} rounded-t-xl mb-6`} />
-                
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-600/30 rounded-xl p-6 transition-all duration-300 hover:border-cyan-400/50 h-full relative z-10">
+                {/* Gradient header */}
+                <div
+                  className={`h-2 w-full bg-gradient-to-r ${project.gradient} rounded-t-xl mb-6`}
+                />
+
+                {/* Title */}
                 <h3 className="text-xl font-mono font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
                   {project.title}
                 </h3>
-                
-                <p className="text-gray-300 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                
+
+                {/* Description */}
+                <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
@@ -112,9 +111,9 @@ const Projects: React.FC = () => {
                     </span>
                   ))}
                 </div>
-                
-                {/* Action button */}
-                <div className="flex justify-center">
+
+                {/* GitHub Button */}
+                <div className="flex justify-center z-20 relative">
                   <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -127,14 +126,14 @@ const Projects: React.FC = () => {
                     View Code
                   </motion.a>
                 </div>
-                
-                {/* Hover glow effect */}
-                <motion.div
-                  className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300 blur-xl`}
-                  initial={{ scale: 0.8 }}
-                  whileHover={{ scale: 1.1 }}
-                />
               </div>
+
+              {/* Hover Glow */}
+              <motion.div
+                className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300 blur-xl pointer-events-none`}
+                initial={{ scale: 0.8 }}
+                whileHover={{ scale: 1.1 }}
+              />
             </motion.div>
           ))}
         </motion.div>
