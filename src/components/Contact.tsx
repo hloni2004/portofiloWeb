@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="py-20 px-4 relative">
+    <section id="contact" className="py-20 px-4 relative">
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading & Let's Connect */}
         <motion.div

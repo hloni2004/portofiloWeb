@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   const [text, setText] = useState('');
+  const [imageError, setImageError] = useState(false);
   const fullText = "Hi, I'm Lehlohonolo Mokoena";
 
   useEffect(() => {
@@ -19,8 +20,17 @@ const Hero: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const handleImageError = () => {
+    console.log('Image failed to load: /icons/hloni.jpeg');
+    setImageError(true);
+  };
+
+  const handleImageLoad = () => {
+    console.log('Image loaded successfully: /icons/hloni.jpeg');
+  };
+
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-900">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-900">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800/30 via-slate-900/50 to-gray-800/30" />
 
@@ -32,15 +42,39 @@ const Hero: React.FC = () => {
       >
         {/* Flex container for profile image + animated name */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-          {/* Profile Picture */}
-          <motion.img
-            src="/icons/hloni.jpeg"
-            alt="Lehlohonolo Mokoena"
-            className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-cyan-400/30"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5 }}
-          />
+          {/* Profile Picture with debug info */}
+          <div className="relative">
+            {!imageError ? (
+              <motion.img
+                src="/icons/hloni.jpeg"
+                alt="Lehlohonolo Mokoena"
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-cyan-400/30 object-cover"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.5 }}
+                onError={handleImageError}
+                onLoad={handleImageLoad}
+              />
+            ) : (
+              // Fallback placeholder when image fails to load
+              <motion.div
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-cyan-400/30 bg-gradient-to-br from-cyan-400/20 to-purple-500/20 flex items-center justify-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.5 }}
+              >
+                <div className="text-center">
+                  <div className="text-4xl mb-2">👨‍💻</div>
+                  <div className="text-xs text-gray-400">Image not found</div>
+                </div>
+              </motion.div>
+            )}
+            
+            {/* Debug info overlay (remove this in production) */}
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 whitespace-nowrap">
+              Path: /icons/hloni.jpeg
+            </div>
+          </div>
 
           {/* Animated Name */}
           <motion.h1

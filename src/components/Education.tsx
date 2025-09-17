@@ -72,7 +72,7 @@ const Education: React.FC = () => {
   };
 
   return (
-    <section className="py-16 px-4 relative">
+    <section id="education" className="py-16 px-4 relative">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div
