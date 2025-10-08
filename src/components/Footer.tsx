@@ -15,6 +15,9 @@ const Footer: React.FC = () => {
           <p className="text-gray-400 font-mono text-sm mb-2">
             © 2025 Lehlohonolo Mokoena. All rights reserved.
           </p>
+          <p className="text-gray-400 font-mono text-sm mb-2">
+            Live demo: <a className="underline text-cyan-400" href="https://alert-emegerency.vercel.app/" target="_blank" rel="noopener noreferrer">AlertFast</a> • Contact: <a className="underline text-cyan-400" href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
+          </p>
           <motion.p
             className="text-xs text-gray-500 font-mono"
             animate={{

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaStar } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Projects: React.FC = () => {
   const projects: Array<{
@@ -10,8 +10,17 @@ const Projects: React.FC = () => {
     githubUrl: string;
     liveUrl?: string;
     gradient: string;
-    featured?: boolean;
   }> = [
+    {
+      title: 'AlertFast — Emergency Alert System',
+      description:
+        "Production-ready, real-time emergency alert system with one-tap Medical/Police/Fire alerts, precise GPS capture, automatic next-of-kin email notifications, and a professional responder dashboard for case management.",
+      tags: ['React', 'Node.js', 'PostgreSQL', 'Bootstrap', 'Google Maps API', 'Email Notifications', 'Role-Based Access'],
+      githubUrl: '#',
+      liveUrl: 'https://alert-emegerency.vercel.app/',
+      gradient: 'from-red-400 to-pink-500',
+      
+    },
     {
       title: 'Student Market Application - Backend',
       description:
@@ -19,7 +28,7 @@ const Projects: React.FC = () => {
       tags: ['Spring Boot', 'Java', 'MySQL', 'REST API', 'JPA', 'Maven', 'Security'],
       githubUrl: 'https://github.com/hloni2004/StudentMarket2',
       gradient: 'from-cyan-400 to-blue-500',
-      featured: true,
+      
     },
     {
       title: 'Student Market Application - Frontend',
@@ -28,7 +37,7 @@ const Projects: React.FC = () => {
       tags: ['React', 'JavaScript', 'CSS', 'HTML', 'Responsive Design', 'State Management'],
       githubUrl: 'https://github.com/hloni2004/StudentMarket-Group-React',
       gradient: 'from-purple-400 to-pink-500',
-      featured: true,
+      
     },
     {
       title: 'Timetable Management System',
@@ -56,7 +65,9 @@ const Projects: React.FC = () => {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.9 },
-    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.7, ease: 'easeOut' } },
+    // `ease` as a string can trigger TypeScript type errors for Framer Motion's Transition type.
+    // Keep the transition simple (duration only) to satisfy the types.
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.7 } },
   };
 
   return (
@@ -93,18 +104,7 @@ const Projects: React.FC = () => {
             >
               {/* Card container: flex-col + justify-between ensures button stays at bottom */}
               <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-600/30 rounded-xl p-6 transition-all duration-300 hover:border-cyan-400/50 h-full flex flex-col justify-between relative">
-                {/* Featured badge */}
-                {project.featured && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-2 py-1 rounded-full text-xs font-mono font-bold flex items-center gap-1"
-                  >
-                    <FaStar size={10} />
-                    Featured
-                  </motion.div>
-                )}
+                {/* No featured badge (feature removed) */}
 
                 {/* Content section */}
                 <div>
