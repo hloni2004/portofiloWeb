@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+// Image is stored in the `public/icons` folder. Vite serves files in `public/` at the site root.
+const hloni = '/icons/hloni.jpg';
 
 const Hero: React.FC = () => {
   const [text, setText] = useState('');
@@ -21,12 +23,12 @@ const Hero: React.FC = () => {
   }, []);
 
   const handleImageError = () => {
-    console.log('Image failed to load: /icons/hloni.jpeg');
+    console.log(`Image failed to load: ${hloni}`);
     setImageError(true);
   };
 
   const handleImageLoad = () => {
-    console.log('Image loaded successfully: /icons/hloni.jpeg');
+    console.log(`Image loaded successfully: ${hloni}`);
   };
 
   return (
@@ -45,16 +47,18 @@ const Hero: React.FC = () => {
           {/* Profile Picture with debug info */}
           <div className="relative">
             {!imageError ? (
-              <motion.img
-                src="/icons/hloni.jpeg"
-                alt="Lehlohonolo Mokoena"
-                className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-cyan-400/30 object-cover"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.5 }}
-                onError={handleImageError}
-                onLoad={handleImageLoad}
-              />
+              <a href={hloni} target="_blank" rel="noopener noreferrer" aria-label="Open profile image in new tab">
+                <motion.img
+                  src={hloni}
+                  alt="Lehlohonolo Mokoena"
+                  className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-cyan-400/30 object-cover"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1.5 }}
+                  onError={handleImageError}
+                  onLoad={handleImageLoad}
+                />
+              </a>
             ) : (
               // Fallback placeholder when image fails to load
               <motion.div
@@ -72,7 +76,7 @@ const Hero: React.FC = () => {
             
             {/* Debug info overlay (remove this in production) */}
             <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 whitespace-nowrap">
-              Path: /icons/hloni.jpeg
+              Path: /icons/hloni.jpg (public)
             </div>
           </div>
 
