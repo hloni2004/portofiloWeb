@@ -40,11 +40,12 @@ const Projects: React.FC = () => {
       
     },
     {
-      title: 'Timetable Management System',
+      title: 'SkillLink Africa',
       description:
-        'Enhanced Java-based desktop application for designing and managing academic timetables. Features improved GUI with Java Swing, advanced scheduling algorithms, conflict detection, and robust database integration using Derby DB.',
-      tags: ['Java', 'Swing', 'Derby DB', 'Desktop App', 'GUI', 'Scheduling', 'Algorithms'],
-      githubUrl: 'https://github.com/hloni2004/timetable-project',
+        'A decentralized freelance marketplace built on the Stellar network that connects clients with skilled workers across Africa. Features smart contracts, escrow services, secure XLM payments, and Soroban integration for trustless transactions. Addresses payment security and trust issues in the African freelance economy.',
+      tags: ['React', 'Node.js', 'Stellar', 'Blockchain', 'Soroban', 'Smart Contracts', 'Rust', 'Supabase'],
+      githubUrl: 'https://github.com/hloni2004/Stellar.git',
+      liveUrl: 'https://youtu.be/vh0iNZGTuhs',
       gradient: 'from-green-400 to-emerald-500',
     },
     {

@@ -73,11 +73,6 @@ const Hero: React.FC = () => {
                 </div>
               </motion.div>
             )}
-            
-            {/* Debug info overlay (remove this in production) */}
-            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 whitespace-nowrap">
-              Path: /icons/hloni.jpg (public)
-            </div>
           </div>
 
           {/* Animated Name */}
