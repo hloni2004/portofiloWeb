@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-900">
+  <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pro-section pro-fade bg-gray-900">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800/30 via-slate-900/50 to-gray-800/30" />
 
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-center z-10 px-4"
+        className="text-center z-10 px-4 pro-card"
       >
         {/* Flex container for profile image + animated name */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
@@ -82,7 +82,7 @@ const Hero: React.FC = () => {
 
           {/* Animated Name */}
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-mono font-bold"
+            className="text-4xl md:text-6xl lg:text-7xl pro-heading"
             style={{
               background: 'linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ffff)',
               backgroundSize: '300% 300%',
@@ -115,7 +115,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed pro-fade"
         >
           Full-Stack Developer & Data Analytics Trainee | Ready for collaboration
         </motion.p>
@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
               const skillsSection = document.querySelector('#skills');
               skillsSection?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg border border-cyan-400/30 backdrop-blur-sm transition-all duration-300 cursor-pointer"
+            className="px-8 py-3 pro-btn cursor-pointer"
           >
             Explore My Work
           </motion.button>

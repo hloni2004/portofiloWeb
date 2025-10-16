@@ -2,72 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom scrollbar */
+/* Custom scrollbar - optimized */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937;
+  background: #1a1a1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #00ffff, #ff00ff);
-  border-radius: 4px;
+  background: #00ffff;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #00cccc, #cc00cc);
+  background: #00cccc;
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling - optimized */
 html {
   scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0a0a0a;
 }
 
-/* Custom animations */
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fast animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(0, 255, 255, 0.6); }
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); }
 }
 
 .float-animation {
-  animation: float 6s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Clean professional card */
+.pro-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  will-change: transform;
+}
+.pro-card:hover {
+  border-color: rgba(0, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Clean section spacing */
+.pro-section {
+  padding: 3rem 0;
+}
+
+/* Fast, clean headings */
+.pro-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00ffff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fast button */
+.pro-btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  background: #00ffff;
+  color: #000;
+  transition: all 0.15s ease;
+  will-change: transform;
+}
+.pro-btn:hover {
+  background: #00cccc;
+  transform: scale(1.02);
+}
+
+/* Fast fade-in */
+.pro-fade {
+  animation: fadeIn 0.6s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .glow-animation {
   animation: glow 3s ease-in-out infinite;
 }
 
-/* Custom gradient text */
+/* Clean gradient text */
 .gradient-text {
-  background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ffff);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #00ffff, #ffffff);
   background-clip: text;
-  animation: gradient-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Loading animation */
+/* Fast loading animation */
 @keyframes pulse {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  50% { opacity: 0.7; }
 }
 
 .pulse-animation {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 1s ease-in-out infinite;
 }
 
 /* Custom focus styles */
@@ -123,7 +180,17 @@ a:focus {
   --text-secondary: #a0aec0;
 }
 
-/* Accessibility - respect reduced motion */
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reduce motion for performance */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -134,14 +201,13 @@ a:focus {
   }
 }
 
-/* Interactive hover states */
+/* Clean hover states */
 .interactive-card {
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .interactive-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 /* Glitch effect for special elements */

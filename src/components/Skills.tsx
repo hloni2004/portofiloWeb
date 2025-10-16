@@ -108,7 +108,7 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-20 px-4 relative">
+  <section id="skills" className="pro-section pro-fade px-4 relative">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -117,7 +117,7 @@ const Skills: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl pro-heading mb-4">
             Interactive Skills & Technologies
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full mb-8" />
@@ -163,7 +163,7 @@ const Skills: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               onHoverStart={() => setHoveredSkill(index)}
               onHoverEnd={() => setHoveredSkill(null)}
-              className="group relative cursor-pointer"
+              className="group relative cursor-pointer pro-card"
             >
               <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-600/30 rounded-xl p-6 text-center transition-all duration-300 hover:border-cyan-400/50 h-full flex flex-col items-center justify-between relative overflow-hidden">
                 {/* Interactive particles on hover */}

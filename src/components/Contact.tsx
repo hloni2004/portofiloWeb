@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 relative">
+  <section id="contact" className="pro-section pro-fade px-4 relative">
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading & Let's Connect */}
         <motion.div
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
             Let's build something amazing together.
           </h3>
           <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full mb-6" />
-          <p className="text-2xl md:text-3xl font-extrabold text-gray-100 max-w-2xl mx-auto">
+          <p className="text-2xl md:text-3xl pro-heading max-w-2xl mx-auto">
             Let's Connect
           </p>
         </motion.div>

@@ -71,7 +71,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 relative">
+  <section id="projects" className="pro-section pro-fade px-4 relative">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -81,7 +81,7 @@ const Projects: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-mono font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl pro-heading mb-4">
             Featured Projects
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full" />
@@ -100,7 +100,7 @@ const Projects: React.FC = () => {
               key={project.title}
               variants={cardVariants}
               whileHover={{ scale: 1.05 }}
-              className="group relative"
+              className="group relative pro-card"
             >
               {/* Card container: flex-col + justify-between ensures button stays at bottom */}
               <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-600/30 rounded-xl p-6 transition-all duration-300 hover:border-cyan-400/50 h-full flex flex-col justify-between relative">
