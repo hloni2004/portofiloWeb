@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-  <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pro-section pro-fade bg-gray-900">
+  <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-900">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800/30 via-slate-900/50 to-gray-800/30" />
 
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-center z-10 px-4 pro-card"
+        className="text-center z-10 px-4"
       >
         {/* Flex container for profile image + animated name */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
                 <motion.img
                   src={hloni}
                   alt="Lehlohonolo Mokoena"
-                  className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-cyan-400/30 object-cover"
+                  className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1.5 }}
@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
             ) : (
               // Fallback placeholder when image fails to load
               <motion.div
-                className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-cyan-400/30 bg-gradient-to-br from-cyan-400/20 to-purple-500/20 flex items-center justify-center"
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-cyan-400/20 to-purple-500/20 flex items-center justify-center shadow-lg"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.5 }}
@@ -112,7 +112,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 2, duration: 1 }}
           className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed pro-fade"
         >
-          Full-Stack Developer & Data Analytics Trainee | Ready for collaboration
+          Full-Stack Developer & Data Analyst at Capaciti | 2025 Stellar Hackathon Winner
         </motion.p>
 
         {/* Explore Button */}

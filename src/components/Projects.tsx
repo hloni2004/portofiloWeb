@@ -40,10 +40,10 @@ const Projects: React.FC = () => {
       
     },
     {
-      title: 'SkillLink Africa',
+      title: 'SkillLink Africa — 2025 Stellar Hackathon Winner 🏆',
       description:
-        'A decentralized freelance marketplace built on the Stellar network that connects clients with skilled workers across Africa. Features smart contracts, escrow services, secure XLM payments, and Soroban integration for trustless transactions. Addresses payment security and trust issues in the African freelance economy.',
-      tags: ['React', 'Node.js', 'Stellar', 'Blockchain', 'Soroban', 'Smart Contracts', 'Rust', 'Supabase'],
+        'A decentralized freelance marketplace built on the Stellar network that connects clients with skilled workers across Africa. Features smart contracts, escrow services, secure XLM payments, and Soroban integration for trustless transactions. Winner of the 2025 Stellar Blockchain Hackathon.',
+      tags: ['React', 'Node.js', 'Express', 'TypeScript', 'Stellar', 'Soroban', 'Rust', 'Supabase'],
       githubUrl: 'https://github.com/hloni2004/Stellar.git',
       liveUrl: 'https://youtu.be/vh0iNZGTuhs',
       gradient: 'from-green-400 to-emerald-500',

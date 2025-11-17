@@ -33,9 +33,9 @@ const Skills: React.FC = () => {
       name: 'Python', 
       color: 'from-yellow-400 to-amber-500', 
       image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-      level: 75,
+      level: 80,
       category: 'data',
-      description: 'Data analysis, automation, and backend development'
+      description: 'Data analysis with Pandas, NumPy, and Matplotlib'
     },
     { 
       name: 'MySQL', 
@@ -46,10 +46,18 @@ const Skills: React.FC = () => {
       description: 'Database design, optimization, and complex queries'
     },
     { 
+      name: 'PostgreSQL', 
+      color: 'from-blue-500 to-blue-700', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+      level: 80,
+      category: 'database',
+      description: 'Advanced relational database management'
+    },
+    { 
       name: 'TypeScript', 
       color: 'from-blue-500 to-indigo-600', 
       image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-      level: 80,
+      level: 85,
       category: 'frontend',
       description: 'Type-safe JavaScript development'
     },
@@ -57,9 +65,17 @@ const Skills: React.FC = () => {
       name: 'Node.js', 
       color: 'from-green-500 to-green-600', 
       image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-      level: 75,
+      level: 80,
       category: 'backend',
       description: 'Server-side JavaScript and API development'
+    },
+    { 
+      name: 'Power BI', 
+      color: 'from-yellow-400 to-yellow-600', 
+      image: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+      level: 75,
+      category: 'data',
+      description: 'Data visualization and business intelligence dashboards'
     },
     { 
       name: 'Git', 
@@ -279,7 +295,7 @@ const Skills: React.FC = () => {
         >
           <p className="text-gray-400 font-mono text-sm mb-4">Also familiar with:</p>
           <div className="flex flex-wrap justify-center gap-3">
-            {['TypeScript', 'Node.js', 'Git', 'Docker', 'REST APIs', 'Tailwind CSS'].map((tech) => (
+            {['Express.js', 'Docker', 'REST APIs', 'Tailwind CSS', 'Bootstrap', 'Framer Motion', 'Excel', 'SQLite', 'Postman', 'VS Code', 'IntelliJ'].map((tech) => (
               <motion.span
                 key={tech}
                 initial={{ opacity: 0, scale: 0.8 }}

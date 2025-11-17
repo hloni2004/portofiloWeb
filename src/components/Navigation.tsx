@@ -9,8 +9,11 @@ const Navigation: React.FC = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'Skills', href: '#skills' },
+    { name: 'About', href: '#home' },
     { name: 'Education', href: '#education' },
+    { name: 'Certifications', href: '#achievements' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
