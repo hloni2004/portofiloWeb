@@ -12,6 +12,15 @@ const Projects: React.FC = () => {
     gradient: string;
   }> = [
     {
+      title: 'Client Hub Portal — Full-Stack E-commerce',
+      description:
+        'Full-stack e-commerce application supporting product browsing, cart management, secure checkout, and real-time order & inventory updates. Features React + TypeScript frontend, Spring Boot Java backend, PostgreSQL, JWT auth, Dockerized services, and AWS S3 for asset storage.',
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'Docker Compose', 'AWS S3', 'JWT'],
+      githubUrl: '#',
+      liveUrl: 'https://client-hub-portal.vercel.app',
+      gradient: 'from-indigo-400 to-blue-500',
+    },
+    {
       title: 'AlertFast — Emergency Alert System',
       description:
         "Production-ready, real-time emergency alert system with one-tap Medical/Police/Fire alerts, precise GPS capture, automatic next-of-kin email notifications, and a professional responder dashboard for case management.",
@@ -56,15 +65,6 @@ const Projects: React.FC = () => {
       githubUrl: '#',
       liveUrl: '#',
       gradient: 'from-pink-400 to-red-500',
-    },
-    {
-      title: 'Client Hub Portal — Full-Stack E-commerce',
-      description:
-        'Full-stack e-commerce application supporting product browsing, cart management, secure checkout, and real-time order & inventory updates. Features React + TypeScript frontend, Spring Boot Java backend, PostgreSQL, JWT auth, Dockerized services, and AWS S3 for asset storage.',
-      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'Docker Compose', 'AWS S3', 'JWT'],
-      githubUrl: '#',
-      liveUrl: 'https://client-hub-portal.vercel.app',
-      gradient: 'from-indigo-400 to-blue-500',
     },
   ];
 
@@ -143,31 +143,31 @@ const Projects: React.FC = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 mt-auto">
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-700 text-white font-mono font-semibold rounded-lg border border-gray-600 transition-all duration-300 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-400/25 flex-1 justify-center"
-                  >
-                    <FaGithub size={14} />
-                    Code
-                  </motion.a>
-                  
-                  {project.liveUrl && (
+                    {project.liveUrl && (
+                      <motion.a
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-mono font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 flex-1 justify-center"
+                      >
+                        <FaExternalLinkAlt size={12} />
+                        Live
+                      </motion.a>
+                    )}
+
                     <motion.a
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      href={project.liveUrl}
+                      href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-mono font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/25 flex-1 justify-center"
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-700 text-white font-mono font-semibold rounded-lg border border-gray-600 transition-all duration-300 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-400/25 flex-1 justify-center"
                     >
-                      <FaExternalLinkAlt size={12} />
-                      Live
+                      <FaGithub size={14} />
+                      Code
                     </motion.a>
-                  )}
                 </div>
               </div>
 

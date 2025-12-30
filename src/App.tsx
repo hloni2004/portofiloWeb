@@ -4,7 +4,6 @@ import ParticleBackground from './components/ParticleBackground';
 import InteractiveCursor from './components/InteractiveCursor';
 import InteractiveControls from './components/InteractiveControls';
 import Hero from './components/Hero';
-import InteractiveStats from './components/InteractiveStats';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Experience from './components/Experience';
@@ -26,9 +25,7 @@ function App() {
         {/* 1. Header / Profile Section */}
         <Hero />
         
-        {/* 2. About Me / Summary */}
-        <InteractiveStats />
-        
+        {/* 2. About Me / Summary (removed interactive stats) */}
         {/* 3. Education */}
         <Education />
         
