@@ -9,11 +9,6 @@ const Navigation: React.FC = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#home' },
-    { name: 'Education', href: '#education' },
-    { name: 'Certifications', href: '#achievements' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -80,7 +75,6 @@ const Navigation: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className="ml-4 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-mono font-semibold rounded-lg transition-all duration-300"
                 onClick={() => {
-                  // You can replace this with actual resume download logic
                   window.open('/resume.pdf', '_blank');
                 }}
               >

@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaTrophy, FaCertificate, FaStar, FaExternalLinkAlt } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaTrophy, FaCertificate, FaStar, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 
 const Achievements: React.FC = () => {
   const achievements = [
@@ -10,7 +10,8 @@ const Achievements: React.FC = () => {
       description: 'Won the 2025 Stellar Blockchain Hackathon with SkillLink Africa, a decentralized freelance marketplace',
       year: '2025',
       gradient: 'from-yellow-400 to-amber-500',
-      type: 'award'
+      type: 'award',
+      link: '/stellar.pdf'
     },
     {
       title: 'CompTIA Data+ Certified',
@@ -26,6 +27,19 @@ const Achievements: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+  };
+
+  const [viewerOpen, setViewerOpen] = useState(false);
+  const [viewerSrc, setViewerSrc] = useState<string | null>(null);
+
+  const openViewer = (src: string) => {
+    setViewerSrc(src);
+    setViewerOpen(true);
+  };
+
+  const closeViewer = () => {
+    setViewerOpen(false);
+    setViewerSrc(null);
   };
 
   const cardVariants = {
@@ -60,6 +74,40 @@ const Achievements: React.FC = () => {
             Recognition and professional certifications earned throughout my journey
           </p>
         </motion.div>
+
+          {/* PDF Viewer Modal */}
+          <AnimatePresence>
+            {viewerOpen && viewerSrc && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+              >
+                <motion.div
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.95, opacity: 0 }}
+                  className="bg-gray-900 rounded-lg overflow-hidden max-w-4xl w-full h-[80vh]"
+                >
+                  <div className="flex items-center justify-between p-3 border-b border-gray-800">
+                    <div className="text-sm text-gray-300 font-mono">Certificate Preview</div>
+                    <div className="flex items-center gap-2">
+                      <a href={viewerSrc} target="_blank" rel="noopener noreferrer" className="text-xs text-cyan-400 hover:underline">
+                        Open in new tab
+                      </a>
+                      <button onClick={closeViewer} className="text-gray-300 hover:text-white">
+                        <FaTimes />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="w-full h-full bg-gray-800">
+                    <iframe src={viewerSrc} title="Certificate" className="w-full h-full" />
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
         {/* Achievements Grid */}
         <motion.div
@@ -109,18 +157,24 @@ const Achievements: React.FC = () => {
 
                 {/* Badge Link if available */}
                 {achievement.link && (
-                  <motion.a
-                    href={achievement.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <motion.button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // Open PDF links in viewer, external links in new tab
+                      if (achievement.link.endsWith('.pdf') || achievement.type === 'award') {
+                        openViewer(achievement.link);
+                      } else {
+                        window.open(achievement.link, '_blank');
+                      }
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="inline-flex items-center gap-2 px-4 py-2 bg-gray-700/50 text-cyan-400 font-mono font-semibold text-xs rounded-lg border border-cyan-400/30 hover:border-cyan-400 hover:bg-gray-700 transition-all duration-300"
                   >
-                    <FaCertificate size={12} />
-                    View Badge
+                    {achievement.type === 'award' ? <FaTrophy size={12} /> : <FaCertificate size={12} />}
+                    {achievement.type === 'award' ? 'View Certificate' : 'View Badge'}
                     <FaExternalLinkAlt size={10} />
-                  </motion.a>
+                  </motion.button>
                 )}
 
                 {/* Type Badge */}

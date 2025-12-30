@@ -57,6 +57,15 @@ const Projects: React.FC = () => {
       liveUrl: '#',
       gradient: 'from-pink-400 to-red-500',
     },
+    {
+      title: 'Client Hub Portal — Full-Stack E-commerce',
+      description:
+        'Full-stack e-commerce application supporting product browsing, cart management, secure checkout, and real-time order & inventory updates. Features React + TypeScript frontend, Spring Boot Java backend, PostgreSQL, JWT auth, Dockerized services, and AWS S3 for asset storage.',
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'Docker Compose', 'AWS S3', 'JWT'],
+      githubUrl: '#',
+      liveUrl: 'https://client-hub-portal.vercel.app',
+      gradient: 'from-indigo-400 to-blue-500',
+    },
   ];
 
   const containerVariants = {
