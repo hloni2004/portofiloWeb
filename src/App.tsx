@@ -25,21 +25,20 @@ function App() {
         {/* 1. Header / Profile Section */}
         <Hero />
         
-        {/* 2. About Me / Summary (removed interactive stats) */}
-        {/* 3. Education */}
+        {/* 2. Education */}
         <Education />
-        
-        {/* 4. Certifications */}
-        <Achievements />
-        
-        {/* 5. Work Experience */}
+
+        {/* 3. Work Experience */}
         <Experience />
-        
+
+        {/* 4. Featured Projects */}
+        <Projects />
+
+        {/* 5. Certifications */}
+        <Achievements />
+
         {/* 6. Technical Skills */}
         <Skills />
-        
-        {/* 7. Featured Projects */}
-        <Projects />
         
         {/* 8. Contact Section */}
         <Contact />

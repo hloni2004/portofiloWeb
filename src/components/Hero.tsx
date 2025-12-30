@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 // Image is stored in the `public/icons` folder. Vite serves files in `public/` at the site root.
-const hloni = '/icons/hloni.jpg';
+const hloni = '/icons/hloni.jpeg';
 
 const Hero: React.FC = () => {
   const [text, setText] = useState('');
